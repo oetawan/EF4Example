@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CRSDashboardModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="CRSDashboardEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CRS_EMP_EMPLOYEE" EntityType="CRSDashboardModel.CRS_EMP_EMPLOYEE" />
+  </EntityContainer>
+  <EntityType Name="CRS_EMP_EMPLOYEE">
+    <Key>
+      <PropertyRef Name="EMPLOYEE_ID" />
+    </Key>
+    <Property Name="EMPLOYEE_ID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="STREAM_ID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="GRADE_CODE_ID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="DEVELOPMENT_STAGE_ID" Type="Int32" Nullable="false" />
+    <Property Name="EMPLOYEE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="WRES_ID" Type="Int32" />
+    <Property Name="APP_ID" Type="Int32" />
+    <Property Name="RES_NAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="EMPLOYEMENT_STATUS_CODE" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="EMPLOYEE_ALIAS" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="EMPLOYEE_SID" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="ACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="PICTURE" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="HIRING_DATE" Type="DateTime" Precision="3" />
+    <Property Name="DIVISION" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SUBDIVISION" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="NEXT_REVIEW_PERIOD" Type="DateTime" Precision="3" />
+    <Property Name="COMMENT" Type="String" MaxLength="8000" Unicode="false" FixedLength="false" />
+    <Property Name="CREATE_USER" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CREATE_DATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LAST_MOD_USER" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="LAST_MOD_DATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="VERS" Type="Int32" Nullable="false" />
+  </EntityType>
+</Schema>

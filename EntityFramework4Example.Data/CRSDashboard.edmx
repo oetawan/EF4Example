@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CRSDashboardModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="CRSDashboardModelStoreContainer">
+          <EntitySet Name="CRS_EMP_EMPLOYEE" EntityType="CRSDashboardModel.Store.CRS_EMP_EMPLOYEE" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="CRS_EMP_EMPLOYEE">
+          <Key>
+            <PropertyRef Name="EMPLOYEE_ID" />
+          </Key>
+          <Property Name="EMPLOYEE_ID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="STREAM_ID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="GRADE_CODE_ID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="DEVELOPMENT_STAGE_ID" Type="int" Nullable="false" />
+          <Property Name="EMPLOYEE_NAME" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="WRES_ID" Type="int" />
+          <Property Name="APP_ID" Type="int" />
+          <Property Name="RES_NAME" Type="varchar" MaxLength="255" />
+          <Property Name="EMPLOYEMENT_STATUS_CODE" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="EMPLOYEE_ALIAS" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="EMPLOYEE_SID" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="ACTIVE" Type="bit" Nullable="false" />
+          <Property Name="PICTURE" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="HIRING_DATE" Type="datetime" />
+          <Property Name="DIVISION" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="SUBDIVISION" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="NEXT_REVIEW_PERIOD" Type="datetime" />
+          <Property Name="COMMENT" Type="varchar" />
+          <Property Name="CREATE_USER" Type="varchar" MaxLength="20" />
+          <Property Name="CREATE_DATE_TIME" Type="datetime" Nullable="false" />
+          <Property Name="LAST_MOD_USER" Type="varchar" MaxLength="20" />
+          <Property Name="LAST_MOD_DATE_TIME" Type="datetime" Nullable="false" />
+          <Property Name="VERS" Type="int" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CRSDashboardModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="CRSDashboardEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CRS_EMP_EMPLOYEE" EntityType="CRSDashboardModel.CRS_EMP_EMPLOYEE" />
+        </EntityContainer>
+        <EntityType Name="CRS_EMP_EMPLOYEE">
+          <Key>
+            <PropertyRef Name="EMPLOYEE_ID" />
+          </Key>
+          <Property Name="EMPLOYEE_ID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="STREAM_ID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="GRADE_CODE_ID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DEVELOPMENT_STAGE_ID" Type="Int32" Nullable="false" />
+          <Property Name="EMPLOYEE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="WRES_ID" Type="Int32" />
+          <Property Name="APP_ID" Type="Int32" />
+          <Property Name="RES_NAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="EMPLOYEMENT_STATUS_CODE" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="EMPLOYEE_ALIAS" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="EMPLOYEE_SID" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ACTIVE" Type="Boolean" Nullable="false" />
+          <Property Name="PICTURE" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="HIRING_DATE" Type="DateTime" Precision="3" />
+          <Property Name="DIVISION" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="SUBDIVISION" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="NEXT_REVIEW_PERIOD" Type="DateTime" Precision="3" />
+          <Property Name="COMMENT" Type="String" MaxLength="8000" Unicode="false" FixedLength="false" />
+          <Property Name="CREATE_USER" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CREATE_DATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LAST_MOD_USER" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="LAST_MOD_DATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="VERS" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CRSDashboardModelStoreContainer" CdmEntityContainer="CRSDashboardEntities">
+          <EntitySetMapping Name="CRS_EMP_EMPLOYEE">
+            <EntityTypeMapping TypeName="CRSDashboardModel.CRS_EMP_EMPLOYEE">
+              <MappingFragment StoreEntitySet="CRS_EMP_EMPLOYEE">
+                <ScalarProperty Name="EMPLOYEE_ID" ColumnName="EMPLOYEE_ID" />
+                <ScalarProperty Name="STREAM_ID" ColumnName="STREAM_ID" />
+                <ScalarProperty Name="GRADE_CODE_ID" ColumnName="GRADE_CODE_ID" />
+                <ScalarProperty Name="DEVELOPMENT_STAGE_ID" ColumnName="DEVELOPMENT_STAGE_ID" />
+                <ScalarProperty Name="EMPLOYEE_NAME" ColumnName="EMPLOYEE_NAME" />
+                <ScalarProperty Name="WRES_ID" ColumnName="WRES_ID" />
+                <ScalarProperty Name="APP_ID" ColumnName="APP_ID" />
+                <ScalarProperty Name="RES_NAME" ColumnName="RES_NAME" />
+                <ScalarProperty Name="EMPLOYEMENT_STATUS_CODE" ColumnName="EMPLOYEMENT_STATUS_CODE" />
+                <ScalarProperty Name="EMPLOYEE_ALIAS" ColumnName="EMPLOYEE_ALIAS" />
+                <ScalarProperty Name="EMPLOYEE_SID" ColumnName="EMPLOYEE_SID" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+                <ScalarProperty Name="PICTURE" ColumnName="PICTURE" />
+                <ScalarProperty Name="HIRING_DATE" ColumnName="HIRING_DATE" />
+                <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
+                <ScalarProperty Name="SUBDIVISION" ColumnName="SUBDIVISION" />
+                <ScalarProperty Name="NEXT_REVIEW_PERIOD" ColumnName="NEXT_REVIEW_PERIOD" />
+                <ScalarProperty Name="COMMENT" ColumnName="COMMENT" />
+                <ScalarProperty Name="CREATE_USER" ColumnName="CREATE_USER" />
+                <ScalarProperty Name="CREATE_DATE_TIME" ColumnName="CREATE_DATE_TIME" />
+                <ScalarProperty Name="LAST_MOD_USER" ColumnName="LAST_MOD_USER" />
+                <ScalarProperty Name="LAST_MOD_DATE_TIME" ColumnName="LAST_MOD_DATE_TIME" />
+                <ScalarProperty Name="VERS" ColumnName="VERS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

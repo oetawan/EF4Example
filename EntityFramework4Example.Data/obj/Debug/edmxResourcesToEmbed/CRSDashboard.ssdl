@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CRSDashboardModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="CRSDashboardModelStoreContainer">
+    <EntitySet Name="CRS_EMP_EMPLOYEE" EntityType="CRSDashboardModel.Store.CRS_EMP_EMPLOYEE" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="CRS_EMP_EMPLOYEE">
+    <Key>
+      <PropertyRef Name="EMPLOYEE_ID" />
+    </Key>
+    <Property Name="EMPLOYEE_ID" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="STREAM_ID" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="GRADE_CODE_ID" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DEVELOPMENT_STAGE_ID" Type="int" Nullable="false" />
+    <Property Name="EMPLOYEE_NAME" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="WRES_ID" Type="int" />
+    <Property Name="APP_ID" Type="int" />
+    <Property Name="RES_NAME" Type="varchar" MaxLength="255" />
+    <Property Name="EMPLOYEMENT_STATUS_CODE" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="EMPLOYEE_ALIAS" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="EMPLOYEE_SID" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="ACTIVE" Type="bit" Nullable="false" />
+    <Property Name="PICTURE" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="HIRING_DATE" Type="datetime" />
+    <Property Name="DIVISION" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="SUBDIVISION" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="NEXT_REVIEW_PERIOD" Type="datetime" />
+    <Property Name="COMMENT" Type="varchar" />
+    <Property Name="CREATE_USER" Type="varchar" MaxLength="20" />
+    <Property Name="CREATE_DATE_TIME" Type="datetime" Nullable="false" />
+    <Property Name="LAST_MOD_USER" Type="varchar" MaxLength="20" />
+    <Property Name="LAST_MOD_DATE_TIME" Type="datetime" Nullable="false" />
+    <Property Name="VERS" Type="int" Nullable="false" />
+  </EntityType>
+</Schema>

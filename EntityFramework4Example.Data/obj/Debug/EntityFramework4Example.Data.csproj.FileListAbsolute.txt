@@ -1,0 +1,8 @@
+C:\Users\oetawan_c\Documents\Visual Studio 2013\EntityFramework4Example\EntityFramework4Example.Data\bin\Debug\EntityFramework4Example.Data.dll.config
+C:\Users\oetawan_c\Documents\Visual Studio 2013\EntityFramework4Example\EntityFramework4Example.Data\bin\Debug\EntityFramework4Example.Data.dll
+C:\Users\oetawan_c\Documents\Visual Studio 2013\EntityFramework4Example\EntityFramework4Example.Data\bin\Debug\EntityFramework4Example.Data.pdb
+C:\Users\oetawan_c\Documents\Visual Studio 2013\EntityFramework4Example\EntityFramework4Example.Data\bin\Debug\EntityFramework.dll
+C:\Users\oetawan_c\Documents\Visual Studio 2013\EntityFramework4Example\EntityFramework4Example.Data\bin\Debug\EntityFramework.xml
+C:\Users\oetawan_c\Documents\Visual Studio 2013\EntityFramework4Example\EntityFramework4Example.Data\obj\Debug\EntityFramework4Example.Data.csprojResolveAssemblyReference.cache
+C:\Users\oetawan_c\Documents\Visual Studio 2013\EntityFramework4Example\EntityFramework4Example.Data\obj\Debug\EntityFramework4Example.Data.dll
+C:\Users\oetawan_c\Documents\Visual Studio 2013\EntityFramework4Example\EntityFramework4Example.Data\obj\Debug\EntityFramework4Example.Data.pdb

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CRSDashboardModelStoreContainer" CdmEntityContainer="CRSDashboardEntities">
+    <EntitySetMapping Name="CRS_EMP_EMPLOYEE">
+      <EntityTypeMapping TypeName="CRSDashboardModel.CRS_EMP_EMPLOYEE">
+        <MappingFragment StoreEntitySet="CRS_EMP_EMPLOYEE">
+          <ScalarProperty Name="EMPLOYEE_ID" ColumnName="EMPLOYEE_ID" />
+          <ScalarProperty Name="STREAM_ID" ColumnName="STREAM_ID" />
+          <ScalarProperty Name="GRADE_CODE_ID" ColumnName="GRADE_CODE_ID" />
+          <ScalarProperty Name="DEVELOPMENT_STAGE_ID" ColumnName="DEVELOPMENT_STAGE_ID" />
+          <ScalarProperty Name="EMPLOYEE_NAME" ColumnName="EMPLOYEE_NAME" />
+          <ScalarProperty Name="WRES_ID" ColumnName="WRES_ID" />
+          <ScalarProperty Name="APP_ID" ColumnName="APP_ID" />
+          <ScalarProperty Name="RES_NAME" ColumnName="RES_NAME" />
+          <ScalarProperty Name="EMPLOYEMENT_STATUS_CODE" ColumnName="EMPLOYEMENT_STATUS_CODE" />
+          <ScalarProperty Name="EMPLOYEE_ALIAS" ColumnName="EMPLOYEE_ALIAS" />
+          <ScalarProperty Name="EMPLOYEE_SID" ColumnName="EMPLOYEE_SID" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="PICTURE" ColumnName="PICTURE" />
+          <ScalarProperty Name="HIRING_DATE" ColumnName="HIRING_DATE" />
+          <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
+          <ScalarProperty Name="SUBDIVISION" ColumnName="SUBDIVISION" />
+          <ScalarProperty Name="NEXT_REVIEW_PERIOD" ColumnName="NEXT_REVIEW_PERIOD" />
+          <ScalarProperty Name="COMMENT" ColumnName="COMMENT" />
+          <ScalarProperty Name="CREATE_USER" ColumnName="CREATE_USER" />
+          <ScalarProperty Name="CREATE_DATE_TIME" ColumnName="CREATE_DATE_TIME" />
+          <ScalarProperty Name="LAST_MOD_USER" ColumnName="LAST_MOD_USER" />
+          <ScalarProperty Name="LAST_MOD_DATE_TIME" ColumnName="LAST_MOD_DATE_TIME" />
+          <ScalarProperty Name="VERS" ColumnName="VERS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
