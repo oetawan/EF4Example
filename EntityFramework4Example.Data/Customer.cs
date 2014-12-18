@@ -22,6 +22,7 @@ namespace EntityFramework4Example.Data
             this.CustomerZipCode = "";
             this.CustomerPhone = "";
             this.Orders = new HashSet<Order>();
+            this.Contact = new AddntlContactInfo();
         }
     
         public int CustomerId { get; set; }
@@ -33,6 +34,8 @@ namespace EntityFramework4Example.Data
         public string CustomerZipCode { get; set; }
         public string CustomerPhone { get; set; }
         public System.DateTime ModifyDateTime { get; set; }
+    
+        public AddntlContactInfo Contact { get; set; }
     
         public virtual ICollection<Order> Orders { get; set; }
     }

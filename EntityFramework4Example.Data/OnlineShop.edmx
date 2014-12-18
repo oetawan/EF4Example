@@ -129,6 +129,7 @@
           <Property Type="String" Name="CustomerPhone" Nullable="false" DefaultValue="" />
           <Property Type="DateTime" Name="ModifyDateTime" Nullable="false" />
           <NavigationProperty Name="Orders" Relationship="OnlineShop.Order_Customer" FromRole="Customer" ToRole="Order" />
+          <Property Name="Contact" Type="OnlineShop.AddntlContactInfo" Nullable="false" />
         </EntityType>
         <EntityType Name="Item">
           <Key>
@@ -147,8 +148,8 @@
           <Property Type="Int32" Name="OrderId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="DateTime" Name="ModifyDateTime" Nullable="false" />
           <NavigationProperty Name="Customer" Relationship="OnlineShop.Order_Customer" FromRole="Order" ToRole="Customer" />
-          <Property Type="Int32" Name="CustomerCustomerId" Nullable="false" />
           <NavigationProperty Name="Items" Relationship="OnlineShop.OrderItem" FromRole="Order" ToRole="Item" />
+          <Property Type="Int32" Name="CustomerCustomerId" Nullable="false" />
         </EntityType>
         <Association Name="Order_Customer">
           <End Type="OnlineShop.Order" Role="Order" Multiplicity="*" />
@@ -166,6 +167,11 @@
           <End Type="OnlineShop.Order" Role="Order" Multiplicity="*" />
           <End Type="OnlineShop.Item" Role="Item" Multiplicity="*" />
         </Association>
+        <ComplexType Name="AddntlContactInfo" >
+          <Property Type="String" Name="Active" Nullable="false" />
+          <Property Type="String" Name="CellPhone" Nullable="false" />
+          <Property Type="String" Name="EmailAddress" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -202,7 +208,6 @@
         <MappingFragment StoreEntitySet="Orders">
           <ScalarProperty Name="OrderId" ColumnName="OrderId" />
           <ScalarProperty Name="ModifyDateTime" ColumnName="ModifyDateTime" />
-          <ScalarProperty Name="CustomerCustomerId" ColumnName="CustomerCustomerId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

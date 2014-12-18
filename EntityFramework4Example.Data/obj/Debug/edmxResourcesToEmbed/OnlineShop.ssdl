@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OnlineShop.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="OnlineShopStoreContainer">
+    <EntitySet Name="Customers" EntityType="OnlineShop.Store.Customers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Items" EntityType="OnlineShop.Store.Items" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Orders" EntityType="OnlineShop.Store.Orders" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OrderItem" EntityType="OnlineShop.Store.OrderItem" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="Order_CustomerId_To_Customer_CustomerId" Association="OnlineShop.Store.Order_Customer">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderItem_Order" Association="OnlineShop.Store.FK_OrderItem_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderItem" EntitySet="OrderItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderItem_Item" Association="OnlineShop.Store.FK_OrderItem_Item">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="OrderItem" EntitySet="OrderItem" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerFirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CustomerLastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CustomerAddress" Type="nvarchar(max)" Nullable="false" DefaultValue="" />
+    <Property Name="CustomerCity" Type="nvarchar(max)" Nullable="false" DefaultValue="" />
+    <Property Name="CustomerState" Type="nvarchar(max)" Nullable="false" DefaultValue="" />
+    <Property Name="CustomerZipCode" Type="nvarchar(max)" Nullable="false" DefaultValue="" />
+    <Property Name="CustomerPhone" Type="nvarchar(max)" Nullable="false" DefaultValue="" />
+    <Property Name="ModifyDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Items">
+    <Key>
+      <PropertyRef Name="ItemId" />
+    </Key>
+    <Property Name="ItemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ItemDescription" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ModifyDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModifyDateTime" Type="datetime" Nullable="false" />
+    <Property Name="CustomerCustomerId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderItem">
+    <Key>
+      <PropertyRef Name="Orders_OrderId" />
+      <PropertyRef Name="Items_ItemId" />
+    </Key>
+    <Property Name="Orders_OrderId" Type="int" Nullable="false" />
+    <Property Name="Items_ItemId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="Order_Customer">
+    <End Role="Order" Type="OnlineShop.Store.Orders" Multiplicity="*" />
+    <End Role="Customer" Type="OnlineShop.Store.Customers" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="CustomerCustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderItem_Order">
+    <End Role="Order" Type="OnlineShop.Store.Orders" Multiplicity="1" />
+    <End Role="OrderItem" Type="OnlineShop.Store.OrderItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="OrderItem">
+        <PropertyRef Name="Orders_OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderItem_Item">
+    <End Role="OrderItem" Type="OnlineShop.Store.OrderItem" Multiplicity="*" />
+    <End Role="Item" Type="OnlineShop.Store.Items" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ItemId" />
+      </Principal>
+      <Dependent Role="OrderItem">
+        <PropertyRef Name="Items_ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

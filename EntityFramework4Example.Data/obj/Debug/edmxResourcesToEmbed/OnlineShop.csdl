@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="OnlineShop" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="OnlineShopContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Customers" EntityType="OnlineShop.Customer" />
+    <EntitySet Name="Items" EntityType="OnlineShop.Item" />
+    <EntitySet Name="Orders" EntityType="OnlineShop.Order" />
+    <AssociationSet Name="Order_CustomerId_To_Customer_CustomerId" Association="OnlineShop.Order_Customer">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="OrderItem" Association="OnlineShop.OrderItem">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="Item" EntitySet="Items" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Type="Int32" Name="CustomerId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="CustomerFirstName" Nullable="false" />
+    <Property Type="String" Name="CustomerLastName" Nullable="false" />
+    <Property Type="String" Name="CustomerAddress" Nullable="false" DefaultValue="" />
+    <Property Type="String" Name="CustomerCity" Nullable="false" DefaultValue="" />
+    <Property Type="String" Name="CustomerState" Nullable="false" DefaultValue="" />
+    <Property Type="String" Name="CustomerZipCode" Nullable="false" DefaultValue="" />
+    <Property Type="String" Name="CustomerPhone" Nullable="false" DefaultValue="" />
+    <Property Type="DateTime" Name="ModifyDateTime" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="OnlineShop.Order_Customer" FromRole="Customer" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="ItemId" />
+    </Key>
+    <Property Type="Int32" Name="ItemId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ItemName" Nullable="false" />
+    <Property Type="String" Name="ItemDescription" Nullable="false" />
+    <Property Type="DateTime" Name="ModifyDateTime" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="OnlineShop.OrderItem" FromRole="Item" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Type="Int32" Name="OrderId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="ModifyDateTime" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="OnlineShop.Order_Customer" FromRole="Order" ToRole="Customer" />
+    <Property Type="Int32" Name="CustomerCustomerId" Nullable="false" />
+    <NavigationProperty Name="Items" Relationship="OnlineShop.OrderItem" FromRole="Order" ToRole="Item" />
+  </EntityType>
+  <Association Name="Order_Customer">
+    <End Type="OnlineShop.Order" Role="Order" Multiplicity="*" />
+    <End Type="OnlineShop.Customer" Role="Customer" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="CustomerCustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OrderItem">
+    <End Type="OnlineShop.Order" Role="Order" Multiplicity="*" />
+    <End Type="OnlineShop.Item" Role="Item" Multiplicity="*" />
+  </Association>
+</Schema>
