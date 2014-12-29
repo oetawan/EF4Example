@@ -11,9 +11,34 @@ namespace MvcApplication3.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            ViewData["LogoMessage"] = string.Format(
+                "{0}::{1} {2}",
+                RouteData.Values["controller"],
+                RouteData.Values["action"],
+                RouteData.Values.Keys.Contains("id") ? RouteData.Values["id"] : ""); 
 
-            return View();
+            using (var db = new CRSDashboardEntities())
+            {
+                var employee = db.CRS_EMP_EMPLOYEE;
+                var selectedEmployees = from e in employee
+                                        select e;
+                ViewResult result = View(selectedEmployees.ToList());
+                return result;
+            }
+        }
+
+        public ActionResult LookUp(string name)
+        {
+            name = Server.HtmlEncode(name) ?? string.Empty;
+            using (var db = new CRSDashboardEntities())
+            {
+                var employee = db.CRS_EMP_EMPLOYEE;
+                var selectedEmployees = from e in employee
+                                        where e.EMPLOYEE_NAME.ToLower().Contains(name.ToLower())
+                                        select e;
+                ViewResult result = View("Index", selectedEmployees.ToList());
+                return result;
+            }
         }
 
         public ActionResult About()

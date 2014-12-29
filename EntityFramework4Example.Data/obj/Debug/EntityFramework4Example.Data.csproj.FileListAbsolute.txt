@@ -8,3 +8,11 @@ C:\Users\oetawan_c\Documents\Visual Studio 2013\EntityFramework4Example\EntityFr
 C:\Users\oetawan_c\Documents\Visual Studio 2013\EntityFramework4Example\EntityFramework4Example.Data\obj\Debug\EntityFramework4Example.Data.pdb
 C:\Users\oetawan_c\Documents\Visual Studio 2013\EntityFramework4Example\EntityFramework4Example.Data\bin\Debug\EntityFramework4Example.Data.dll.CodeAnalysisLog.xml
 C:\Users\oetawan_c\Documents\Visual Studio 2013\EntityFramework4Example\EntityFramework4Example.Data\bin\Debug\EntityFramework4Example.Data.dll.lastcodeanalysissucceeded
+D:\Tutorial\Projects\EF4Example\src\EntityFramework4Example.Data\bin\Debug\EntityFramework4Example.Data.dll.config
+D:\Tutorial\Projects\EF4Example\src\EntityFramework4Example.Data\bin\Debug\EntityFramework4Example.Data.dll
+D:\Tutorial\Projects\EF4Example\src\EntityFramework4Example.Data\bin\Debug\EntityFramework4Example.Data.pdb
+D:\Tutorial\Projects\EF4Example\src\EntityFramework4Example.Data\bin\Debug\EntityFramework.dll
+D:\Tutorial\Projects\EF4Example\src\EntityFramework4Example.Data\bin\Debug\EntityFramework.xml
+D:\Tutorial\Projects\EF4Example\src\EntityFramework4Example.Data\obj\Debug\EntityFramework4Example.Data.csprojResolveAssemblyReference.cache
+D:\Tutorial\Projects\EF4Example\src\EntityFramework4Example.Data\obj\Debug\EntityFramework4Example.Data.dll
+D:\Tutorial\Projects\EF4Example\src\EntityFramework4Example.Data\obj\Debug\EntityFramework4Example.Data.pdb

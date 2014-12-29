@@ -187,7 +187,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OdeToFoodController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Filters\LogAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -266,7 +268,17 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Views\OdeToFood\Create.aspx" />
+    <Content Include="Views\OdeToFood\CreateReview.aspx" />
+    <Content Include="Views\OdeToFood\Edit.aspx" />
+    <Content Include="Views\OdeToFood\EditReview.aspx" />
+    <Content Include="Views\OdeToFood\Index.aspx" />
+    <Content Include="Views\OdeToFood\Review.aspx" />
+    <Content Include="Views\Shared\_RestaurantReview.ascx" />
+    <Content Include="Views\Shared\_Review.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -315,6 +327,10 @@
     <ProjectReference Include="..\EntityFramework4Example.Data\EntityFramework4Example.Data.csproj">
       <Project>{5ba9cbb3-5c17-48e1-a743-12ba33dc037f}</Project>
       <Name>EntityFramework4Example.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OdeToFood\OdeToFood.csproj">
+      <Project>{7b785e51-809a-44fc-a71c-f482de024a78}</Project>
+      <Name>OdeToFood</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

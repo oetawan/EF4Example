@@ -31,7 +31,6 @@
         <MappingFragment StoreEntitySet="Orders">
           <ScalarProperty Name="OrderId" ColumnName="OrderId" />
           <ScalarProperty Name="ModifyDateTime" ColumnName="ModifyDateTime" />
-          <ScalarProperty Name="CustomerCustomerId" ColumnName="CustomerCustomerId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

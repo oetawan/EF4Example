@@ -1,0 +1,11 @@
+D:\Tutorial\Projects\EF4Example\src\OdeToFood\bin\Debug\OdeToFood.dll.config
+D:\Tutorial\Projects\EF4Example\src\OdeToFood\bin\Debug\OdeToFood.dll
+D:\Tutorial\Projects\EF4Example\src\OdeToFood\bin\Debug\OdeToFood.pdb
+D:\Tutorial\Projects\EF4Example\src\OdeToFood\bin\Debug\EntityFramework.dll
+D:\Tutorial\Projects\EF4Example\src\OdeToFood\bin\Debug\EntityFramework.xml
+D:\Tutorial\Projects\EF4Example\src\OdeToFood\obj\Debug\OdeToFood.csprojResolveAssemblyReference.cache
+D:\Tutorial\Projects\EF4Example\src\OdeToFood\obj\Debug\OdeToFood.Migrations.InitialCreate.resources
+D:\Tutorial\Projects\EF4Example\src\OdeToFood\obj\Debug\OdeToFood.Migrations.Add_reviewer_name.resources
+D:\Tutorial\Projects\EF4Example\src\OdeToFood\obj\Debug\OdeToFood.csproj.GenerateResource.Cache
+D:\Tutorial\Projects\EF4Example\src\OdeToFood\obj\Debug\OdeToFood.dll
+D:\Tutorial\Projects\EF4Example\src\OdeToFood\obj\Debug\OdeToFood.pdb
