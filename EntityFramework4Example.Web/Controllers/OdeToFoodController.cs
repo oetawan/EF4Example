@@ -5,7 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using OdeToFood.Models;
 using OdeToFood.Data;
-
+using PagedList;
+using PagedList.Mvc;
 namespace EntityFramework4Example.Web.Controllers
 {
     public class OdeToFoodController : Controller
@@ -14,10 +15,21 @@ namespace EntityFramework4Example.Web.Controllers
 
         #region Restaurant
 
-        public ActionResult Index(string searchTerm = null)
+        public ActionResult AutoComplete(string term)
+        {
+            var result =
+                _db.Restaurants.
+                Where(r => r.Name.ToLower().StartsWith(term.ToLower())).
+                Take(10).
+                Select(r => new { label = r.Name });
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult Index(string searchTerm, int page = 1)
         {
             ViewData["LogoMessage"] = "OdeToFood";
-            var models = from r
+            var models = (from r
                          in _db.Restaurants
                          where string.IsNullOrEmpty(searchTerm) || r.Name.Trim().ToLower().Contains(searchTerm.Trim().ToLower())
                          orderby r.Reviews.Average(resto => resto.Rating)
@@ -29,8 +41,13 @@ namespace EntityFramework4Example.Web.Controllers
                              City = r.City,
                              Country = r.Country,
                              CountOfReviews = r.Reviews.Count
-                         };
-            return View(models.ToList());
+                         }).ToPagedList(page, 10);
+
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_Restaurant", models);
+            }
+            return View(models);
         }
 
         public ActionResult Create()

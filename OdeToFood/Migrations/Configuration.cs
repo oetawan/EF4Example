@@ -28,6 +28,19 @@ namespace OdeToFood.Migrations
             //    );
             //
 
+            for (int i = 0; i < 1000; i++)
+            {
+                context.Restaurants.AddOrUpdate(
+                    r => r.Name,
+                    new Restaurant
+                    {
+                        Id = i + 7,
+                        Name = (i + 7).ToString(),
+                        City = "Nowhere",
+                        Country = "USA"
+                    });
+            }
+
             context.Restaurants.AddOrUpdate(
                 r => r.Name,
                 new Restaurant

@@ -176,3 +176,7 @@ D:\Tutorial\Projects\EF4Example\src\EntityFramework4Example.Web\bin\zh-Hant\Syst
 D:\Tutorial\Projects\EF4Example\src\EntityFramework4Example.Web\obj\Debug\EntityFramework4Example.Web.csprojResolveAssemblyReference.cache
 D:\Tutorial\Projects\EF4Example\src\EntityFramework4Example.Web\obj\Debug\EntityFramework4Example.Web.dll
 D:\Tutorial\Projects\EF4Example\src\EntityFramework4Example.Web\obj\Debug\EntityFramework4Example.Web.pdb
+D:\Tutorial\Projects\EF4Example\src\EntityFramework4Example.Web\bin\PagedList.dll
+D:\Tutorial\Projects\EF4Example\src\EntityFramework4Example.Web\bin\PagedList.Mvc.dll
+D:\Tutorial\Projects\EF4Example\src\EntityFramework4Example.Web\bin\PagedList.xml
+D:\Tutorial\Projects\EF4Example\src\EntityFramework4Example.Web\bin\PagedList.Mvc.xml
